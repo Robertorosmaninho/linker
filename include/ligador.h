@@ -1,33 +1,26 @@
 #ifndef LIGADOR_H
 #define LIGADOR_H
 
-#include <vector>
-#include <string>
 #include <algorithm>
-#include <cstdio>
 #include <cctype>
-#include <map>
-#include <sstream>
-#include <istream>
-#include <fstream>
-#include <iostream>
 #include <cstdio>
 #include <cstdlib>
+#include <fstream>
+#include <iostream>
+#include <istream>
+#include <map>
+#include <sstream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
 class Linker {
 
 private:
-  map<string, int> symbolTable;
-  map<string, int> pseudosTable;
-  map<string, int> operandsTable;
-
-  map<string, int> symbolTableAuxFiles;
   map<string, int> pseudosTableAuxFiles;
   vector<string> numbersAuxFiles;
 
-  map<string, int> symbolTableMainFile;
   map<string, int> pseudosTableMainFile;
   vector<string> numbersMainFile;
 
@@ -36,6 +29,7 @@ private:
   vector<string> lines;
   vector<string> tokens;
   vector<string> numbersVector;
+  map<string, int> pseudosTable;
 
   bool foundMainSymbol = false;
 
@@ -44,21 +38,23 @@ private:
   vector<int> ilcVec;
 
 public:
-  Linker(const vector<string>& fileNames);
+  Linker();
   ~Linker();
 
-  void setInputFiles(const vector<string>& fileNames);
+  // Alloc
+  void setInputFiles(const vector<string> &fileNames);
   void readInputFile();
-  void ignoreComments();
   void setLinesIntoTokens();
-  void setTokensIntoMaps(map<string, int> &symbol, map<string, int> &pseudos,
+  void setTokensIntoMaps(map<string, int> &pseudos,
                          vector<string> &numbers, bool isMain);
+  // Realloc + Link
   void Realloc();
   void writeOutputFile();
+  void Zelda(const vector<string> &fileNames);
 
+  // Auxiliary Functions
   string cleanString(string str);
-  bool isNum(const string& line);
-
+  bool isNum(const string &line);
 };
 
 #endif

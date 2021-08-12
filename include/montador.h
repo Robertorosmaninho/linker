@@ -1,16 +1,16 @@
 #ifndef MONTADOR_H
 #define MONTADOR_H
 
-#include <vector>
-#include <string>
 #include <algorithm>
-#include <cstdio>
 #include <cctype>
-#include <map>
-#include <sstream>
-#include <istream>
+#include <cstdio>
 #include <fstream>
 #include <iostream>
+#include <istream>
+#include <map>
+#include <sstream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -34,16 +34,16 @@ private:
   vector<vector<string>> tokens;
   vector<string> numbers;
 
-  int PC; //ILC? --> Contador de programas: contém o endereço da próxima
-          // instrução a ser executada;
-  int AP = 999; // Apontador da pilha: aponta para o elemento no topo da pilha;
+  int PC;      //ILC? --> Contador de programas: contém o endereço da próxima
+               // instrução a ser executada;
+  int AP = 999;// Apontador da pilha: aponta para o elemento no topo da pilha;
   int ilc;
-public:
 
+public:
   Assembler(string fileName);
   ~Assembler() = default;
 
-  void setInputFile(const string& fileName);
+  void setInputFile(const string &fileName);
 
   void buildSymbolTable();
   void buildOperandsTable();
@@ -56,7 +56,7 @@ public:
   void secondFase();
   void assemble();
 
-  static bool isNum(const string& num);
+  static bool isNum(const string &num);
   string cleanString(string str);
   int codeGen(vector<string> token);
 };

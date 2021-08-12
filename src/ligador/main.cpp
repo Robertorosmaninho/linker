@@ -1,5 +1,5 @@
-#include <iostream>
 #include "ligador.h"
+#include <iostream>
 
 int main(int argc, char *argv[]) {
   string fileName;
@@ -14,7 +14,8 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  auto *linker = new Linker(fileNames);
-  //avengers->assemble();
-    return 0;
+  auto *Link = new Linker();
+  Link->Zelda(fileNames);
+
+  return 0;
 }

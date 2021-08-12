@@ -1,21 +1,16 @@
 #include "ligador.h"
 
-Linker::Linker(const vector <string>& fileNames) {
-  setInputFiles(fileNames);
-}
+Linker::Linker() {}
 
 Linker::~Linker() {
   if (inputFile->is_open())
     inputFile->close();
 
-  symbolTable.clear();
   pseudosTable.clear();
 
-  symbolTableAuxFiles.clear();
   pseudosTableAuxFiles.clear();
   numbersAuxFiles.clear();
 
-  symbolTableMainFile.clear();
   pseudosTableMainFile.clear();
   numbersMainFile.clear();
 
@@ -24,15 +19,15 @@ Linker::~Linker() {
   numbersVector.clear();
 }
 
-string Linker::cleanString(string str){
+string Linker::cleanString(string str) {
   string new_str;
-  for (char & c : str)
+  for (char &c : str)
     if (isdigit(c) || isalpha(c))
       new_str.push_back(c);
   return new_str;
 }
 
-bool Linker::isNum(const string& line) {
+bool Linker::isNum(const string &line) {
   for (const char c : line)
     if (!isdigit(c))
       return false;
@@ -40,7 +35,7 @@ bool Linker::isNum(const string& line) {
   return true;
 }
 
-void Linker::setInputFiles(const vector<string>& fileNames){
+void Linker::setInputFiles(const vector<string> &fileNames) {
   for (auto fileName : fileNames) {
     fstream file(fileName);
     if (!file.is_open()) {
@@ -49,8 +44,8 @@ void Linker::setInputFiles(const vector<string>& fileNames){
       inputFile = &file;
       readInputFile();
     }
-  // Depois de lido o arquivo não precisa mais ficar aberto!
-  inputFile->close();
+    // Depois de lido o arquivo não precisa mais ficar aberto!
+    inputFile->close();
   }
 
   numbersVector.insert(numbersVector.end(),
@@ -61,9 +56,6 @@ void Linker::setInputFiles(const vector<string>& fileNames){
                        std::make_move_iterator(numbersAuxFiles.begin()),
                        std::make_move_iterator(numbersAuxFiles.end()));
 
-  symbolTable.merge(symbolTableMainFile);
-  symbolTable.merge(symbolTableAuxFiles);
-
   pseudosTable.merge(pseudosTableMainFile);
 
   int i = 0, j = 0;
@@ -71,7 +63,7 @@ void Linker::setInputFiles(const vector<string>& fileNames){
   for (auto &item : pseudosTableAuxFiles) {
     if (i < ilcVec[j]) {
       item.second += ilc;
-    } else if (i+1 == ilcVec[j]) {
+    } else if (i + 1 == ilcVec[j]) {
       ilc += ilcVec[j];
       ilcVec[j + 1] += ilcVec[j];
       j++;
@@ -79,9 +71,6 @@ void Linker::setInputFiles(const vector<string>& fileNames){
   }
   pseudosTable.insert(pseudosTableAuxFiles.begin(),
                       pseudosTableAuxFiles.end());
-
-  Realloc();
-  writeOutputFile();
 }
 
 void Linker::readInputFile() {
@@ -92,30 +81,26 @@ void Linker::readInputFile() {
 
   setLinesIntoTokens();
   if (foundMainSymbol)
-    setTokensIntoMaps(symbolTableMainFile, pseudosTableMainFile,
-                      numbersMainFile, true);
+    setTokensIntoMaps(pseudosTableMainFile, numbersMainFile, true);
   else
-    setTokensIntoMaps(symbolTableAuxFiles, pseudosTableAuxFiles,
-                      numbersAuxFiles, false);
+    setTokensIntoMaps(pseudosTableAuxFiles, numbersAuxFiles, false);
 
   tokens.clear();
   lines.clear();
 }
 
 void Linker::setLinesIntoTokens() {
-   // 0 -> size of nums
-   // 1 -> vector of nums
-   // 2 -> size of symbols
-   // 3 -> vector of symbols
-   // 4 -> size of pseudos
-   // 5 -> vector of pseudos
+  // 0 -> size of nums
+  // 1 -> vector of nums
+  // 2 -> size of pseudos
+  // 3 -> vector of pseudos
 
-  for (const auto& line : lines){
+  for (const auto &line : lines) {
     if (line.empty())
       continue;
     string token;
     istringstream ss(line);
-    while(ss >> token) {
+    while (ss >> token) {
       auto in = cleanString(token);
       if (!in.empty()) {
         if (in == "mainfunc")
@@ -129,25 +114,18 @@ void Linker::setLinesIntoTokens() {
   }
 }
 
-void Linker::setTokensIntoMaps(map<string, int> &symbol,
-                               map<string, int> &pseudos,
+void Linker::setTokensIntoMaps(map<string, int> &pseudos,
                                vector<string> &numbers, bool isMain) {
   int inc = isMain ? 0 : ilc;
 
-  tokens.erase(tokens.begin());
-
   int num_size = stoi(tokens[0]);
-  int symbol_size = stoi(tokens[num_size+1]);
-  int idx = (num_size+1)+(symbol_size*2);
+  int idx = num_size + 1;
 
-  for (int i = 1; i < num_size+1; i++)
+  for (int i = 1; i < idx; i++)
     numbers.push_back(tokens[i]);
 
-  for (int i = num_size+2; i < idx+1; i+=2)
-    symbol[tokens[i]] = stoi(tokens[i+1]);
-
-  for (int i = idx+2; i < tokens.size(); i+=2)
-    pseudos[tokens[i]] = stoi(tokens[i+1]) + inc;
+  for (int i = idx + 1; i < tokens.size(); i += 2)
+    pseudos[tokens[i]] = stoi(tokens[i + 1]) + inc;
   if (!isMain)
     ilcVec.push_back(num_size);
 }
@@ -159,16 +137,21 @@ void Linker::Realloc() {
     if (!isNum(token))
       token = to_string(pseudosTable[token] - PC);
   }
-
 }
 
-void Linker::writeOutputFile(){
+void Linker::writeOutputFile() {
   cout << "MV-EXE\n";
   cout << "\n";
-  cout << numbersVector.size() << " " << 100 << " " << 999 << " " << 100 <<"\n";
+  cout << numbersVector.size() << " " << 100 << " " << 999 << " " << 100 << "\n";
   cout << "\n";
 
   for (auto token : numbersVector)
     cout << token << " ";
   cout << "\n";
+}
+
+void Linker::Zelda(const vector<string> &fileNames) {// Link or Zelda? :p
+  setInputFiles(fileNames);
+  Realloc();
+  writeOutputFile();
 }
