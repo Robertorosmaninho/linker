@@ -1,0 +1,5 @@
+make all --dry-run --keep-going --print-directory
+make: Entering directory `/Users/robertorosmaninho/Desktop/ESCOLAS/UFMG/7˚ Período - 2021.1/C1/Material para o Trabalho Prático/tp2_seuNOME'
+make: Nothing to be done for `all'.
+make: Leaving directory `/Users/robertorosmaninho/Desktop/ESCOLAS/UFMG/7˚ Período - 2021.1/C1/Material para o Trabalho Prático/tp2_seuNOME'
+ 

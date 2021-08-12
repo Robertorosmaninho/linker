@@ -1,0 +1,418 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Wed Aug 11 15:54:02 2021
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+CXX_INCLUDE_PATH = /Library/Developer/CommandLineTools/usr/include/c++/v1:/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include:/Library/Developer/CommandLineTools/usr/include:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include:/System/Library/Frameworks
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from `Makefile', line 26)
+CPPFLAGS = -Iinclude/
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/robertorosmaninho/Desktop/ESCOLAS/UFMG/7˚ Período - 2021.1/C1/Material para o Trabalho Prático/tp2_seuNOME
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 15)
+SRCS_LIGADOR = $(patsubst %,%.$(EXT),main ligador)
+# makefile (from `Makefile', line 25)
+CXXFLAGS = -Wall -g -std=c++14
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/ql/4n6yr9hs75n_m_s_8p19j3180000gn/T/vscode-ipc-35305152-090f-40ab-941a-4ad7a3fd8c6f.sock
+# environment
+VSCODE_CWD = /
+# environment
+PATH = /Users/robertorosmaninho/micromamba/bin:/Users/robertorosmaninho/opt/anaconda3/bin:/usr/local/opt/openssl@1.1/bin:/usr/local/opt/bison/bin:/sbin:/Users/robertorosmaninho/llvm-project/build/bin:/Users/robertorosmaninho/bin:/usr/local/bin:/usr/local/Cellar/smlnj/110.74/libexec/bin:/usr/local/bin/:/usr/local/opt/openssl/bin:/opt/local/bin:/Users/robertorosmaninho/.local/bin:/usr/bin:/bin:/Users/robertorosmaninho/.local/bin:/Users/robertorosmaninho/Library/Python/2.7/bin:/usr/local/bin/:/usr/sbin/:/Users/robertorosmaninho/oracle/sqlcl/bin
+# environment
+LSCOLORS = 
+# makefile (from `Makefile', line 10)
+SRCS_MONTADOR = $(patsubst %,%.$(EXT),main montador)
+# environment
+ 
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.EsV6qeuvvu/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# default
+MAKEFILES := 
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /Users/robertorosmaninho/Desktop/ESCOLAS/UFMG/7˚ Período - 2021.1/C1/Material para o Trabalho Prático/tp2_seuNOME
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /Users/robertorosmaninho
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/robertorosmaninho/Library/Application Support/Code/CachedData/379476f0e13988d90fab105c5c19e7abc8b1dea8
+# environment
+LOGNAME = robertorosmaninho
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+ZSH = /Users/robertorosmaninho/.oh-my-zsh
+# environment
+CMAKE_CXX_COMPILER = /usr/bin/g++
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from `Makefile', line 16)
+OBJS_LIGADOR = $(patsubst %,build/ligador/%.o,$(basename $(SRCS_LIGADOR)))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 22)
+CC = gcc
+# environment
+JAVA_HOME = /Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = robertorosmaninho
+# makefile
+.DEFAULT_GOAL := all
+# environment
+MAMBA_EXE = /Users/robertorosmaninho/Desktop/./micromamba
+# makefile (from `Makefile', line 24)
+CCFLAGS = -Wall
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# makefile (from `Makefile', line 11)
+OBJS_MONTADOR = $(patsubst %,build/montador/%.o,$(basename $(SRCS_MONTADOR)))
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/ql/4n6yr9hs75n_m_s_8p19j3180000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/robertorosmaninho/Library/Application Support/Code/1.59.0-main.sock
+# makefile (from `Makefile', line 6)
+EXT = cpp
+# environment
+LLVM_SYMBOLIZER_PATH = /Users/robertorosmaninho/llvm-project/build/bin/llvm-symbolizer
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.67482822.67482828
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+CMAKE_C_COMPILER = /usr/bin/gcc
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x47
+# environment
+COMMAND_MODE = unix2003
+# environment
+MAMBA_ROOT_PREFIX = /Users/robertorosmaninho/micromamba
+# environment
+VSCODE_BROWSER_CODE_LOADING = bypassHeatCheck
+# automatic
+<F = $(notdir $<)
+# makefile (from `Makefile', line 23)
+CXX = g++
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+ldc2 = ~/ldc/build/bin/ldc2
+# environment
+C_INCLUDE_PATH = /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include:/Library/Developer/CommandLineTools/usr/include:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include:/System/Library/Frameworks
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_PID = 71504
+# variable set hash-table stats:
+# Load=88/1024=9%, Rehash=0, Collisions=4/123=3%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777220, inode 67439553): 11 files, no impossibilities.
+# src/montador (device 16777220, inode 67439573): 4 files, no impossibilities so far.
+# src/ligador (device 16777220, inode 67439576): 4 files, no impossibilities so far.
+
+# 19 files, no impossibilities in 3 directories.
+
+# Implicit Rules
+
+build/montador/%.o: src/montador/%.cpp
+#  commands to execute (from `Makefile', line 69):
+	@echo "- Compilando objeto \"$@\""
+	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+	
+
+build/ligador/%.o: src/ligador/%.cpp
+#  commands to execute (from `Makefile', line 79):
+	@echo "- Compilando objeto \"$@\""
+	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+	
+
+# 2 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+src/ligador/main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-08-11 15:38:56
+ 
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+bin/montador: build/montador/main.o build/montador/montador.o
+#  Implicit rule search has not been done.
+#  Last modified 2021-08-11 15:36:50
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 45):
+	@echo "+ Compilando programa \"$@\""
+	@$(CXX) $(CXXFLAGS) $(OBJS_MONTADOR) -o bin/montador
+	
+
+# Not a target:
+tst/ex_main.omv:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: bin/montador bin/ligador
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+build/montador/montador.o: src/montador/montador.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `montador'
+#  Last modified 2021-08-11 15:36:49
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 69):
+	@echo "- Compilando objeto \"$@\""
+	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+	
+
+teste_ligador: bin/ligador tst/ex_main.omv tst/ex_func.omv
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2021-08-11 15:45:04
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+tst/ex_func.omv:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/ligador/main.o: src/ligador/main.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `main'
+#  Last modified 2021-08-11 15:42:35
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 79):
+	@echo "- Compilando objeto \"$@\""
+	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+	
+
+bin/ligador: build/ligador/main.o build/ligador/ligador.o
+#  Implicit rule search has not been done.
+#  Last modified 2021-08-11 15:42:36
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 55):
+	@echo "+ Compilando programa \"$@\""
+	@$(CXX) $(CXXFLAGS) $(OBJS_LIGADOR) -o bin/ligador
+	
+
+# Not a target:
+src/ligador/ligador.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-08-11 15:28:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/montador/main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-08-10 15:05:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 88):
+	rm -f bin/* $(OBJS_MONTADOR)
+	rm -f bin/* $(OBJS_LIGADOR)
+	
+
+# Not a target:
+src/montador/montador.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2021-08-11 13:15:36
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+teste_montador:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 35):
+	bin/montador tst/ex_main.amv > tst/ex_main.omv
+	bin/montador tst/ex_func.amv > tst/ex_func.omv
+	
+
+build/ligador/ligador.o: src/ligador/ligador.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ligador'
+#  Last modified 2021-08-11 15:36:53
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 79):
+	@echo "- Compilando objeto \"$@\""
+	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+	
+
+build/montador/main.o: src/montador/main.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `main'
+#  Last modified 2021-08-11 15:36:48
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 69):
+	@echo "- Compilando objeto \"$@\""
+	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+	
+
+# files hash-table stats:
+# Load=19/1024=2%, Rehash=0, Collisions=0/53=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Wed Aug 11 15:54:02 2021
+
+ 
