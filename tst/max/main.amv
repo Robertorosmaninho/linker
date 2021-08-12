@@ -1,0 +1,23 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;; Recebe N inteiros e imprime o máximo entre eles;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+main: LOAD R2 const1 
+      READ R3           ; Tamanho da entrada     
+      READ R0           ; lê o próximo inteiro
+      CALL maior
+
+loop: SUB R3 R2   ; decrementa R3
+      JZ end      ; R3=0 (computou todos os números)
+      READ R0
+      SUB R1 R0
+      JN  maior   ; R0 > R1 
+      ADD R1 R0  
+      JUMP loop
+
+end: WRITE R1
+     HALT
+
+END
+
+

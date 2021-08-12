@@ -1,0 +1,29 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;Recebe um inteiro N e calcula o N-ésimo termo da sequência de Fibonacci ;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+main: READ  R0         
+      STORE R0 a         ; lê e armazena a entrada
+      LOAD R3 const1
+      SUB  R0 R3
+      JZ   imprime0      ; se N=1 fibonacci=0
+      LOAD R3 const1
+      SUB  R0 R3
+      JZ   imprime1      ; se N=2 fibonacci=1
+      LOAD R3 const2
+      LOAD R0 a
+      SUB  R0 R3       
+      JN   imprimeErro     ; se N negativo
+      LOAD R1 const0 
+      LOAD R2 const1 
+      LOAD R3 const1 
+
+fibonacci: 	STORE R2 a 
+		ADD   R2 R1 
+		LOAD  R1 a 
+		SUB  R0 R3 
+		JZ   imprimeFibN
+		JUMP fibonacci
+
+END
+

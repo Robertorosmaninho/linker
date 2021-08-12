@@ -10,7 +10,6 @@ Linker::~Linker() {
 
   symbolTable.clear();
   pseudosTable.clear();
-  operandsTable.clear();
 
   symbolTableAuxFiles.clear();
   pseudosTableAuxFiles.clear();

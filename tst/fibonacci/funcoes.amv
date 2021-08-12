@@ -1,0 +1,22 @@
+a: WORD 0
+const0: WORD  0
+const1: WORD  1
+const2: WORD  2
+erro:  WORD -1
+
+imprime0: LOAD  R3 const0
+          WRITE R3
+          HALT
+
+imprime1: LOAD  R3 const1
+          WRITE R3
+          HALT
+
+imprimeErro: LOAD  R3 erro
+             WRITE R3
+             HALT
+
+imprimeFibN: WRITE R2
+             HALT
+
+END
